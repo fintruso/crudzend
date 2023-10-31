@@ -1,3 +1,4 @@
+  GNU nano 4.8                                                  docker-compose.yml                                                              
 version: '3'
 services:
   web:
@@ -16,3 +17,5 @@ services:
       POSTGRES_DB: testeweb
     ports:
       - "5432:5432"
+    volumes:
+      - ./banco.sql:/docker-entrypoint-initdb.d/banco.sql
