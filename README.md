@@ -15,7 +15,7 @@ Para configurar e executar o projeto, siga as etapas abaixo:
 ```bash
 git clone https://github.com/seu-usuario/seu-projeto.git
 cd seu-projeto
-docker build -t testeweb .
+docker-compose build
 docker-compose up
 ```
 
