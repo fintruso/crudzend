@@ -1,0 +1,35 @@
+<h1> Listando veiculos </h1>
+
+<a href="<?= $this->url('veiculo', ['action' => 'adicionar']) ?>" class="btn btn-success">Adicionar</a>
+
+<table class="table table-stripped">
+    <tr>
+        <th>Codigo</th>
+        <th>Placa</th>
+        <th>Renavam</th>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>Ano</th>
+        <th>Cor</th>
+        <th>Ação</th>
+    </tr>
+
+<?php foreach($veiculos as $veiculo) : ?>
+
+    <tr>
+        <td><?= $veiculo->getId(); ?> </td>
+        <td><?= $veiculo->getPlaca(); ?> </td>
+        <td><?= $veiculo->getRenavam(); ?> </td>
+        <td><?= $veiculo->getModelo(); ?> </td>
+        <td><?= $veiculo->getMarca(); ?> </td>
+        <td><?= $veiculo->getAno(); ?> </td>
+        <td><?= $veiculo->getCor(); ?> </td>
+        <td>
+            <a href="<?= $this->url('veiculo', ['action' => 'editar', 'id' => $veiculo->getId()]) ?>" class="btn btn-info"> <i class="glyphicon glyphicon-edit"></i> Editar</a>
+            <a href="<?= $this->url('veiculo', ['action' => 'remover', 'id' => $veiculo->getId()]) ?>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> Remover</a>
+        </td>
+    </tr>
+
+<?php endforeach; ?>
+
+</table>

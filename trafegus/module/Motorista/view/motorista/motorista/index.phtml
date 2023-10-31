@@ -1,0 +1,33 @@
+<h1> Listando motoristas </h1>
+<a href="<?= $this->url('motorista', ['action' => 'adicionar']) ?>" class="btn btn-success">Adicionar</a>
+
+<table class="table table-stripped">
+    <tr>
+        <th>Codigo</th>
+        <th>Nome</th>
+        <th>Rg</th>
+        <th>Cpf</th>
+        <th>Telefone</th>
+        <th>VeiculoId</th>
+        <th>Ação</th>
+    </tr>
+
+<?php foreach($motoristas as $motorista) : ?>
+
+    <tr>
+        <td><?= $motorista->getId(); ?> </td>
+        <td><?= $motorista->getNome(); ?> </td>
+        <td><?= $motorista->getRg(); ?> </td>
+        <td><?= $motorista->getCpf(); ?> </td>
+        <td><?= $motorista->getTelefone(); ?> </td>
+        <td><?= $motorista->getVeiculoId(); ?> </td>
+
+        <td>
+            <a href="<?= $this->url('motorista', ['action' => 'editar', 'id' => $motorista->getId()]) ?>" class="btn btn-info"> <i class="glyphicon glyphicon-edit"></i> Editar</a>
+            <a href="<?= $this->url('motorista', ['action' => 'remover', 'id' => $motorista->getId()]) ?>" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> Remover</a>
+        </td>
+    </tr>
+
+<?php endforeach; ?>
+
+</table>
