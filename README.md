@@ -15,3 +15,26 @@ Para configurar e executar o projeto, siga as etapas abaixo:
 ```bash
 git clone https://github.com/seu-usuario/seu-projeto.git
 cd seu-projeto
+docker build -t testeweb .
+docker-compose up
+```
+
+### Uso
+Após a configuração, o aplicativo estará disponível em http://localhost:8080. Você pode acessar a aplicação a partir do seu navegador web.
+
+Dockerfile
+O Dockerfile usado para criar o contêiner Docker contém as seguintes etapas:
+
+- Usa uma imagem base do PHP 7.4 com o Apache.
+- Atualiza e instala as dependências do PostgreSQL.
+- Copia os arquivos do Zend Framework 2 para o contêiner.
+- Instala as extensões do PHP.
+- Ativa o módulo rewrite do Apache.
+- Instala o Composer 1.
+- Expõe a porta 80.
+- Inicia o Apache.
+
+### O Projeto de teste
+
+- após iniciar o docker estara disponivel em http://localhost:8080/trafegus/public/
+```

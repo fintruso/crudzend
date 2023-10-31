@@ -10,10 +10,13 @@ COPY . /var/www/html/
 # Instale as extensões do PHP
 RUN docker-php-ext-install pdo pdo_pgsql
 
+# Instale a extensão intl (método diferente)
+RUN apt-get install -y libicu-dev
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-install intl
+
 # Ative o módulo rewrite do Apache
 RUN a2enmod rewrite
-
-RUN apt-get update && apt-get install -y git
 
 # Instale o Composer 1
 RUN php -r "copy('https://getcomposer.org/download/1.10.22/composer.phar', 'composer.phar');" \
